@@ -1,0 +1,24 @@
+{% if artist_list %}
+  <h1>Artists</h1>
+
+  {% if soloists %}
+    <h2>Solo Artists</h2>
+    <ul>
+      {% for artist in soloists %}
+        <li><a href="/artists/{{ artist.id }}/">{{ artist.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if groups %}
+    <h2>Groups</h2>
+    <ul>
+    {% for artist in groups %}
+      <li><a href="/artists/{{ artist.id }}/">{{ artist.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+{% else %}
+  <p>No Artists are available.</p>
+{% endif %}

@@ -1,0 +1,17 @@
+  <h1>{{artist.name}}</h1>
+
+  {% for album in albums %}
+    <h2>{{album.title}}</h2>
+    <ul>
+      {% for song in album.song_set.all %}
+        <li>{{ song.title }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+  <ul>
+  {% for song in songs %}
+    <li>{{song.title}} by {{song.artist.name}}</li>
+
+  {% endfor %}
+  </ul>
