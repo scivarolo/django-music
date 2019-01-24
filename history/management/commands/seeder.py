@@ -1,10 +1,11 @@
 from django_seed import Seed
-from history.models import Artist, Song, Album
+from django.core.management.base import BaseCommand
 import random
+from history.models import *
 
-class SeedHistory():
+class Command(BaseCommand):
 
-    def execute(self):
+    def handle(self):
         seeder = Seed.seeder()
 
         # seeder.add_entity(Artist, 5)
